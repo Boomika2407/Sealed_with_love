@@ -1,0 +1,102 @@
+{
+  "campus": {
+    "name": "Coimbatore Institute of Technology",
+    "code": "CIT_COIMBATORE",
+    "city": "Coimbatore, Tamil Nadu",
+    "center": [77.0274, 11.0277],
+    "zoom": 17,
+    "boundary": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [77.024792, 11.0252095],
+          [77.0248796, 11.0246174],
+          [77.0254527, 11.0246677],
+          [77.0255216, 11.0243531],
+          [77.0296894, 11.025048],
+          [77.0296368, 11.0271274],
+          [77.029296, 11.0284461],
+          [77.0291505, 11.0297877],
+          [77.0286976, 11.0301435],
+          [77.0285581, 11.0306955],
+          [77.025105, 11.0282723],
+          [77.0254559, 11.0268839],
+          [77.0257352, 11.0253567],
+          [77.024792, 11.0252095]
+        ]
+      ]
+    }
+  },
+  "spots": [
+    {
+      "name": "CIT Main Gate (Avinashi Road)",
+      "category": "gate",
+      "description": "The landmark main entrance on Avinashi Road. Ideal for 4-year Freshers' letters to your future graduating self.",
+      "radiusMeters": 50,
+      "location": {
+        "type": "Point",
+        "coordinates": [77.0256, 11.0249]
+      }
+    },
+    {
+      "name": "CIT Central Library",
+      "category": "library",
+      "description": "Central Library reading halls, digital e-learning center, and quiet study corridors.",
+      "radiusMeters": 60,
+      "location": {
+        "type": "Point",
+        "coordinates": [77.0270, 11.0268]
+      }
+    },
+    {
+      "name": "CIT Student Canteen & Food Court",
+      "category": "canteen",
+      "description": "Hot samosas, filter coffee, and parotta breaks between tiring lab sessions.",
+      "radiusMeters": 75,
+      "location": {
+        "type": "Point",
+        "coordinates": [77.0265, 11.0258]
+      }
+    },
+    {
+      "name": "CIT Main Academic & Administrative Block",
+      "category": "academic",
+      "description": "Historic clock tower, lecture halls, and departmental labs where tech innovations are born.",
+      "radiusMeters": 80,
+      "location": {
+        "type": "Point",
+        "coordinates": [77.0268, 11.0260]
+      }
+    },
+    {
+      "name": "CIT Open Air Theatre (OAT) & Quadrangle",
+      "category": "iconic",
+      "description": "Epicentre of cultural fests (Muthamizh Mandram, Interface), dance practices, and batch farewells.",
+      "radiusMeters": 65,
+      "location": {
+        "type": "Point",
+        "coordinates": [77.0274, 11.0272]
+      }
+    },
+    {
+      "name": "CIT Sports Complex & Athletic Grounds",
+      "category": "sports",
+      "description": "Cricket pitch, basketball courts, and evening running tracks with cool Kovai breeze.",
+      "radiusMeters": 100,
+      "location": {
+        "type": "Point",
+        "coordinates": [77.0285, 11.0265]
+      }
+    },
+    {
+      "name": "CIT Hostel Block & Courtyard",
+      "category": "hostel",
+      "description": "Hostel gates, midnight exam prep, birthday cake cuts, and lifelong memories.",
+      "radiusMeters": 70,
+      "location": {
+        "type": "Point",
+        "coordinates": [77.0278, 11.0288]
+      }
+    }
+  ]
+}

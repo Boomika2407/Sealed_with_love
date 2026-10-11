@@ -1,0 +1,275 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* Scrapbook graph-dot paper texture */
+    background-color: #FFF5F7;
+    background-image: 
+      radial-gradient(#FBCFE8 1px, transparent 1px),
+      radial-gradient(#E9D5FF 1px, #FFF5F7 1px);
+    background-size: 28px 28px;
+    background-position: 0 0, 14px 14px;
+    color: #2E1065;
+    overflow-x: hidden;
+  }
+
+  /* "Midnight Dorm" Dark Mode: Twinkling stars & fireflies */
+  .dark body {
+    background-color: #0F0B18;
+    background-image: 
+      radial-gradient(#C084FC 0.85px, transparent 0.85px),
+      radial-gradient(#FDE047 0.75px, transparent 0.75px),
+      radial-gradient(#3B1A5A 1px, #0F0B18 1px);
+    background-size: 40px 40px, 70px 70px, 20px 20px;
+    background-position: 0 0, 25px 25px, 10px 10px;
+    color: #F3E8FF;
+  }
+}
+
+/* Scrapbook Washi Tape */
+.washi-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.5deg);
+  width: 96px;
+  height: 24px;
+  background-color: rgba(254, 240, 138, 0.85);
+  box-shadow: 0 2px 4px rgba(46, 16, 101, 0.12);
+  border-left: 2px dashed rgba(202, 138, 4, 0.5);
+  border-right: 2px dashed rgba(202, 138, 4, 0.5);
+  z-index: 10;
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+.washi-tape-pink {
+  background-color: rgba(254, 205, 211, 0.9);
+  border-color: rgba(244, 63, 94, 0.5);
+}
+
+.washi-tape-lilac {
+  background-color: rgba(233, 213, 255, 0.9);
+  border-color: rgba(168, 85, 247, 0.5);
+}
+
+.washi-tape-mint {
+  background-color: rgba(187, 247, 208, 0.9);
+  border-color: rgba(34, 197, 94, 0.5);
+}
+
+/* Scrapbook Sticker Button with wiggle and squish */
+.btn-sticker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  border: 2.5px solid #2E1065;
+  border-radius: 9999px;
+  box-shadow: 3px 4px 0px #2E1065;
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.15s ease;
+  user-select: none;
+  cursor: pointer;
+}
+
+.btn-sticker:hover:not(:disabled) {
+  transform: translate(-1.5px, -1.5px) rotate(-1deg);
+  box-shadow: 4.5px 5.5px 0px #2E1065;
+}
+
+.btn-sticker:active:not(:disabled) {
+  transform: translate(2px, 2px) scale(0.96);
+  box-shadow: 1px 1.5px 0px #2E1065;
+}
+
+.dark .btn-sticker {
+  border-color: #6B4C9A;
+  box-shadow: 3px 4px 0px #4C2882;
+}
+
+.dark .btn-sticker:hover:not(:disabled) {
+  border-color: #A855F7;
+  box-shadow: 4.5px 5.5px 0px #4C2882;
+}
+
+.dark .btn-sticker:active:not(:disabled) {
+  box-shadow: 1px 1.5px 0px #4C2882;
+}
+
+/* Polaroid Card with tilt and hover straighten/lift */
+.polaroid-card {
+  background: #FFFFFF;
+  border: 2.5px solid #2E1065;
+  box-shadow: 4px 6px 0px rgba(46, 16, 101, 0.9);
+  border-radius: 14px;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+
+.dark .polaroid-card {
+  background: #1A132B;
+  border-color: #6B4C9A;
+  box-shadow: 4px 6px 0px rgba(107, 76, 154, 0.9);
+}
+
+.polaroid-card:hover {
+  transform: translateY(-5px) rotate(0deg) scale(1.015) !important;
+  box-shadow: 6px 11px 0px rgba(46, 16, 101, 0.95);
+}
+
+.dark .polaroid-card:hover {
+  box-shadow: 6px 11px 0px rgba(168, 85, 247, 0.8);
+}
+
+/* Sticky Note with Curled Corner Shadow */
+.sticky-note {
+  border: 2px solid #2E1065;
+  box-shadow: 3px 5px 0px rgba(46, 16, 101, 0.85);
+  border-radius: 8px;
+  position: relative;
+}
+
+.sticky-note::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 14px 14px;
+  border-color: transparent transparent rgba(46, 16, 101, 0.15) transparent;
+  pointer-events: none;
+}
+
+/* Wax Seal Wobble & Shake Keyframes */
+@keyframes wax-shake {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  20% { transform: scale(0.96) rotate(-5deg); }
+  40% { transform: scale(1.03) rotate(5deg); }
+  60% { transform: scale(0.97) rotate(-3deg); }
+  80% { transform: scale(1.02) rotate(3deg); }
+}
+
+.animate-wax-shake {
+  animation: wax-shake 0.32s ease-in-out infinite;
+}
+
+/* Floating Animations */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-9px) rotate(2deg); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(-2deg); }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes sparkle-fade {
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(0.3); }
+}
+
+@keyframes run-tilt {
+  0%, 100% { transform: rotate(10deg); }
+  50% { transform: rotate(14deg) translateY(-2px); }
+}
+
+.animate-float-slow {
+  animation: float-slow 4.5s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 3.2s ease-in-out infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+.animate-sparkle-fade {
+  animation: sparkle-fade 0.45s ease-out forwards;
+}
+
+.animate-run-tilt {
+  animation: run-tilt 0.35s ease-in-out infinite;
+}
+
+/* 3D Envelope Animation */
+.perspective-container {
+  perspective: 1200px;
+}
+
+.envelope-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Leaflet Map rounded fix */
+.leaflet-container {
+  border-radius: 14px;
+  border: 2.5px solid #2E1065;
+  font-family: inherit;
+  z-index: 1;
+}
+
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  .animate-float-slow,
+  .animate-float-medium,
+  .animate-bounce-gentle,
+  .animate-wax-shake,
+  .animate-run-tilt {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Memory Wall Additions ────────────────────────────── */
+
+/* Film Strip card top/bottom bars */
+.film-strip-bar {
+  background: #1E1035;
+  display: flex;
+  padding: 6px 8px;
+  gap: 6px;
+}
+.film-strip-hole {
+  width: 12px;
+  height: 12px;
+  background: #3B1A5A;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.dark .film-strip-bar { background: #2E1065; }
+.dark .film-strip-hole { background: #4C1D95; }
+
+/* Masonry fade-in for new posts */
+@keyframes card-pop-in {
+  0%   { opacity: 0; transform: scale(0.85) rotate(-3deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+.memory-card-enter {
+  animation: card-pop-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Loading dot bounce */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Hover scale utilities for reaction emoji */
+.hover\:scale-130:hover { transform: scale(1.3); }
+.scale-125 { transform: scale(1.25); }
+.scale-135 { transform: scale(1.35); }
