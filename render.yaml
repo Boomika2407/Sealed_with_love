@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: sealed-campus
+    env: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CRON_SCHEDULE
+        value: "0 * * * *"
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: ENCRYPTION_KEY
+        sync: false
